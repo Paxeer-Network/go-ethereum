@@ -89,6 +89,10 @@ const (
 	TxAccessListAddressGas    uint64 = 2400 // Per address specified in EIP 2930 access list
 	TxAccessListStorageKeyGas uint64 = 1900 // Per storage key specified in EIP 2930 access list
 
+	// EIP-7702 (SetCodeTx) authorization-list gas constants.
+	PerAuthBaseCost     uint64 = 12500 // Per authorization tuple, regardless of outcome
+	PerEmptyAccountCost uint64 = 25000 // Per authorization where the authority has an empty account (balance = nonce = code = 0)
+
 	// These have been changed during the course of the chain
 	CallGasFrontier              uint64 = 40  // Once per CALL operation & message call transaction.
 	CallGasEIP150                uint64 = 700 // Static portion of gas for CALL-derivates after EIP 150 (Tangerine)
